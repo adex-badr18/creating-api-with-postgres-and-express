@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/server.ts",
     "watch": "tsc-watch --esModuleInterop --noClear -p ./src/tsconfig.json --onSuccess \"node ./dist/server.js\"",
-    "test": "jasmine ts",
+    "migrate": "db-migrate --env test up && db-migrate up",
+    "test": "ENV=test db-migrate --env test up && tsc && jasmine && db-migrate db:drop test",
     "tsc": "tsc"
   },
   "keywords": [],

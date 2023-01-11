@@ -2,15 +2,15 @@
     "dev": {
         "driver": "pg",
         "host": "127.0.0.1",
-        "database": "dbtest",
-        "user": "dbtest",
+        "database": "dbdev",
+        "user": "dbuser",
         "password": "password123"
     },
     "test": {
         "driver": "pg",
         "host": "127.0.0.1",
         "database": "dbtest",
-        "user": "dbtest",
+        "user": "dbuser",
         "password": "password123"
     }
 }
