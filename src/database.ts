@@ -1,5 +1,5 @@
 import * as dotenv from 'dotenv';
-import { ClientConfig, Pool, PoolConfig } from 'pg';
+import { Pool } from 'pg';
 
 dotenv.config(); //initializes the environment variables. You can't access the env vars unless this line exists in your code.
 
@@ -31,5 +31,10 @@ if (ENV === 'dev') {
         password: POSTGRES_PASSWORD
     });
 }
+
+client!.connect((err: Error) => {
+    if (err) throw err
+    console.log('Connected');
+})
 
 export default client!;
